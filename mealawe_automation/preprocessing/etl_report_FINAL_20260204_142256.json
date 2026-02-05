@@ -1,0 +1,64 @@
+{
+  "processing_date": "2026-02-04T14:22:56.460357",
+  "version": "FINAL_v3.0_proper_format_and_filtering",
+  "critical_improvements": [
+    "SOP format: packageName + sop_ground_truth with proper food names",
+    "Removed breakfast and fruit salad packages",
+    "Missing addon values: names=None, counts=0",
+    "Proper food name capitalization (Chapati, Veg curry, etc.)"
+  ],
+  "sop_format_example": {
+    "packageName": "Deluxe - Monthly",
+    "sop_ground_truth": {
+      "Chapati": 3,
+      "Veg curry": 1,
+      "Rice": 1,
+      "Dal": 1,
+      "Salad": 1
+    }
+  },
+  "packages_removed": [
+    "Morning Breakfast - Monthly",
+    "Morning Breakfast - Weekly",
+    "Mix Fruit Salad Box (300 gm) , Morning Breakfast - Biweekly",
+    "Morning Breakfast -BiWeekly",
+    "Mix Fruit Salad Box - Monthly (300 gm)"
+  ],
+  "dataset_info": {
+    "original_orders": 4405,
+    "filtered_orders": 4086,
+    "breakfast_packages_removed": 319,
+    "valid_food_sop_orders": 4086,
+    "food_sop_coverage_percent": 100.0,
+    "sop_generation_stats": {
+      "orders_processed": 4086,
+      "food_items_extracted": 19839,
+      "descriptions_parsed": 4086,
+      "addons_processed": 1197,
+      "invalid_orders": 0,
+      "missing_values_filled": 30294,
+      "breakfast_packages_removed": 319
+    }
+  },
+  "computer_vision_readiness": {
+    "yolo_detectable_items": [
+      "Chapati",
+      "Rice",
+      "Dal",
+      "Veg curry",
+      "Salad",
+      "Sweet"
+    ],
+    "foodlmm_assessable_items": [
+      "Dal (watery?)",
+      "Chapati (burnt?)",
+      "Rice (undercooked?)",
+      "Veg curry (fresh?)"
+    ],
+    "expected_performance": {
+      "compartment_detection_map": "94-98%",
+      "quantity_verification_accuracy": "88-92%",
+      "quality_assessment_accuracy": "75-85%"
+    }
+  }
+}
